@@ -45,17 +45,6 @@ function images() {
     .pipe(dest('dist/images'))
 }
 
-function scripts(){
-  return src([
-    'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js'
-  ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
-};
-
 function styles() {
   return src('app/scss/style.scss')
     .pipe(scss({outputStyle: 'compressed'}))
@@ -67,6 +56,18 @@ function styles() {
     .pipe(dest('app/css'))
     .pipe(browserSync.stream())
 }
+
+function scripts(){
+  return src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'app/js/main.js'
+  ])
+  .pipe(concat('main.min.js'))
+  .pipe(uglify())
+  .pipe(dest('app/js'))
+  .pipe(browserSync.stream())
+};
 
 function build() {
   return src([
@@ -85,13 +86,12 @@ function watching() {
 }
 
 exports.styles = styles;
-exports.watching = watching;
-exports.browsersync = browsersync;
 exports.scripts = scripts;
+exports.browsersync = browsersync;
+exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
-  
-  
 exports.build =  series(cleanDist, images, build); 
+
 exports.default = parallel(styles, scripts, browsersync, watching);
 

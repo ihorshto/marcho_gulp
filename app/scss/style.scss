@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 
@@ -119,6 +120,7 @@
       transition: all .3s;
       fill: $default;
     }
+
     &:hover {
       path {
         fill: $accent;
@@ -137,10 +139,12 @@
     margin-bottom: 14px;
     display: block;
   }
-  &__text{
+
+  &__text {
     margin-bottom: 25px;
   }
-  &__form-input{
+
+  &__form-input {
     max-width: 320px;
     background-color: #fff;
     width: 100%;
@@ -148,38 +152,122 @@
     padding: 12px 10px 12px 15px;
     margin-right: 5px;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
-    &::placeholder{
+
+    &::placeholder {
       color: $default;
       font-size: 16px;
       @extend %quicksand-500;
     }
   }
-  &__form-btn{
-    width: 140px;
+
+  &__form-btn {
+    @extend %btn;
     border: none;
-    background-color: $accent;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 12px 25px;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
     cursor: pointer;
   }
 }
 
-.footer-bottom{
+.footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 75px;
   font-size: 12px;
-  &__accept{
+
+  &__accept {
     display: flex;
   }
-  &__text{
+
+  &__text {
     margin-right: 20px;
   }
-  &__accept-img + .footer-bottom__accept-img{
+
+  &__accept-img+.footer-bottom__accept-img {
     margin-left: 25px;
+  }
+}
+
+.top-slider {
+  background-image: url('../images/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 45px;
+
+  &__container {
+    max-width: 1520px;
+  }
+
+  &__content {
+    padding-left: 155px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 68px;
+    color: $title;
+    @extend %roboto-700;
+    padding-bottom: 30px;
+    padding-top: 125px;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    li {
+      padding: 0 5px;
+      line-height: 0;
+
+      button {
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.slick-active {
+        button {
+          border-color: $accent;
+
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -187,4 +275,4 @@
 
 
 
-@import 'media';
+  @import 'media';
