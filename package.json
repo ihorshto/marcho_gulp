@@ -9,6 +9,7 @@
   "author": "Ihor Shtohryn",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp-autoprefixer": "^6.1.0",
@@ -21,6 +22,7 @@
     "slick-carousel": "^1.8.1"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.12",
     "gulp": "^4.0.2"
   }
 }
