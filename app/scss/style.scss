@@ -478,8 +478,136 @@
 }
 
 
+.product {
+  padding: 105px 0 120px;
+  text-align: center;
 
+  &__items {
+    margin-bottom: 55px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px 30px;
+  }
 
+  &__link {
+    text-transform: uppercase;
+    color: $title;
+    border: 1px solid $accent;
+    display: inline-block;
+    padding: 12px 26px;
+  }
+}
+
+.product-item {
+  max-width: 370px;
+
+  &__img-box {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  &__link-box {
+    transition: all .3s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: #fff;
+    width: 212px;
+    height: 50px;
+    margin: 0 auto;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(210%);
+
+  }
+
+  &__link--line::before,
+  &__link--line::after {
+    content: "";
+    position: absolute;
+    background-color: #ececec;
+    width: 1px;
+    height: 30px;
+    top: 10px;
+  }
+
+  &__link--line::before {
+    left: 70px;
+  }
+
+  &__link--line::after {
+    right: 70px;
+  }
+
+  &__link {
+    display: inherit;
+
+    path {
+      transition: .3s;
+    }
+  }
+
+  &__link:hover {
+    path {
+      fill: $accent;
+    }
+  }
+
+  &__images {
+    object-fit: cover;
+  }
+
+  &:hover {
+    .product-item__link-box {
+      transform: translateY(0);
+    }
+  }
+
+  &__title {
+    color: $title;
+    font-size: 22px;
+    padding: 15px 20px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    @extend %roboto-400;
+  }
+
+  &__new-price {
+    padding: 0 12px;
+    color: $title;
+  }
+
+  &__old-price {
+    padding: 0 12px;
+    color: #ccccce;
+    text-decoration: line-through;
+  }
+  &--sale{
+    .product-item__img-box::before{
+      content: "SALE";
+      @extend %btn;
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      line-height: 1;
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  }
+}
+
+.star{
+  margin: 0 auto;
+}
 
 
 
