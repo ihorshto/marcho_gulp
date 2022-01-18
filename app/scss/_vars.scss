@@ -35,9 +35,11 @@ $bg: #f6f6f6;
   @extend %roboto-400;
   color: #fff;
   padding: 12px 26px;
+  cursor: pointer;
 }
-
-%checkbox-hidden{
+ 
+%checkbox-hidden,
+%radio-hidden{
   width: 1px;
   height: 1px;
   overflow: hidden;
