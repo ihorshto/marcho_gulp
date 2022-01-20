@@ -583,7 +583,7 @@
     .product-item__content-box {
       display: block;
     }
-    
+
     .product-item__title {
       order: -1;
       width: 100%;
@@ -721,6 +721,7 @@
       padding: 8px 12px;
     }
   }
+
   &--saleoff {
     .product-item__img-box::before {
       content: "50% OFF";
@@ -862,35 +863,6 @@
     padding: 30px 42px;
   }
 
-  &__item-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  &__item-author,
-  &__item-data {
-    padding-left: 30px;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      left: 0;
-      top: 2px;
-    }
-  }
-
-  &__item-author::before {
-    background-image: url('../images/icons/user-grey.svg');
-  }
-
-  &__item-data::before {
-    background-image: url('../images/icons/time.svg')
-  }
-
   &__item-title--link {
     font-size: 22px;
     color: $title;
@@ -921,6 +893,34 @@
   }
 }
 
+.blog-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  &__author,
+  &__date {
+    padding-left: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 2px;
+    }
+  }
+
+  &__author::before {
+    background-image: url('../images/icons/user-grey.svg');
+  }
+
+  &__date::before {
+    background-image: url('../images/icons/user-grey.svg');
+  }
+}
 
 .modal {
   padding-top: 100px;
@@ -1858,22 +1858,265 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 30px;
-    .product-item__img-box{
+
+    .product-item__img-box {
       height: auto;
     }
-    .product-item__title{
+
+    .product-item__title {
       font-size: 18px;
       @extend %roboto-400;
-      padding: 5px 0 ;
+      padding: 5px 0;
     }
-    .product-item--sale .product-item__img-box::before{
-      font-size: 14px;
-    }
-    .product-item--saleoff .product-item__img-box::before{
+
+    .product-item--sale .product-item__img-box,
+    .product-item--saleoff .product-item__img-box::before {
       font-size: 14px;
     }
   }
 }
- 
+
+.blog-page {
+  padding: 120px 0 60px;
+
+  &__item--slider {
+    .blog-page__item-box {
+      margin-top: -8px;
+    }
+  }
+
+  &__slider {
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      background-color: $accent;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
+
+      path {
+        fill: #fff;
+      }
+    }
+
+    .slick-disabled {
+      background-color: #fff;
+      box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+
+      path {
+        fill: $accent;
+      }
+    }
+
+    .slick-prev {
+      left: 40px;
+    }
+
+    .slick-next {
+      right: 40px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 770px;
+    margin-right: 30px;
+  }
+
+  &__aside {
+    width: 370px;
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    &.blog-page__item--no-image {
+      border-top: 1px solid #ececec;
+      box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
+    }
+  }
+
+  &__item-link {
+    display: block;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  &__popup {
+    max-width: 770px;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item-box {
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 45px 40px;
+  }
+
+  &__item-title {
+    color: $title;
+    margin-bottom: 20px;
+    font-size: 22px;
+    @extend %roboto-500;
+    line-height: 32px;
+    transition: all .3s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .blog-box {
+    justify-content: flex-start;
+
+    &__author {
+      margin-right: 30px;
+    }
+  }
+}
+
+.person {
+  border: 1px solid #ececec;
+  margin-bottom: 40px;
+  padding: 40px 25px;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__img {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 0 auto 35px;
+  }
+
+  &__name {
+    font-size: 18px;
+    @extend %roboto-700;
+    color: $title;
+    margin-bottom: 5px;
+  }
+
+  &__position {
+    color: $accent;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      margin: auto 0;
+  }
+}
+
+  &__social-link {
+    margin: 0 8px;
+    line-height: 0;
+    path {
+      fill: #8d8d8d;
+      transition: all .3s;
+    }
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+}
+
+.latest-post {
+  border: 1px solid #ececec;
+  padding: 35px 30px 40px;
+  margin-bottom: 40px;
+
+  &__title {
+    font-size: 22px;
+    color: $title;
+    @extend %roboto-400;
+    margin-bottom: 35px;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    &:last-child{
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__img-link{
+    display: block; 
+    width: 80px;
+    margin-right: 20px;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px; 
+    object-fit: cover;
+  }
+
+  &__box {
+    width: 210px;
+  }
+
+  &__box-title{
+    font-size: 18px;
+    @extend %roboto-400;
+    color: $title;
+    line-height: 28px;
+    width: 210px;
+  }
+
+  &__date{
+    @extend %roboto-400;
+    padding-left: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url('../images/icons/calendar.svg');
+      width: 16px;
+      height: 16px;
+      left: 0;
+    }
+  }
+}
+
+
+
 
 @import 'media';
