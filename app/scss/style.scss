@@ -1651,8 +1651,7 @@
 }
 
 .product-tabs {
-  padding: 110px 0 60px;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 110px 0 0;
 
   &__top {
     margin-bottom: 40px;
@@ -1764,6 +1763,9 @@
 }
 
 .comments-form {
+  padding-bottom: 60px;
+  border-bottom: 1px solid #f0f0f0;
+
   &__title {
     font-size: 22px;
     @extend %roboto-400;
@@ -2032,18 +2034,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    svg{
+
+    svg {
       margin: auto 0;
+    }
   }
-}
 
   &__social-link {
     margin: 0 8px;
     line-height: 0;
+
     path {
       fill: #8d8d8d;
       transition: all .3s;
     }
+
     &:hover {
       path {
         fill: $accent;
@@ -2069,21 +2074,23 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #ececec;
     display: flex;
-    &:last-child{
+
+    &:last-child {
       border-bottom: 0;
       padding-bottom: 0;
       margin-bottom: 0;
     }
   }
-  &__img-link{
-    display: block; 
+
+  &__img-link {
+    display: block;
     width: 80px;
     margin-right: 20px;
   }
 
   &__img {
     width: 80px;
-    height: 80px; 
+    height: 80px;
     object-fit: cover;
   }
 
@@ -2091,7 +2098,7 @@
     width: 210px;
   }
 
-  &__box-title{
+  &__box-title {
     font-size: 18px;
     @extend %roboto-400;
     color: $title;
@@ -2099,13 +2106,14 @@
     width: 210px;
   }
 
-  &__date{
+  &__date {
     @extend %roboto-400;
     padding-left: 25px;
     position: relative;
     display: flex;
     align-items: center;
-    &::before{
+
+    &::before {
       content: "";
       position: absolute;
       background-image: url('../images/icons/calendar.svg');
@@ -2116,6 +2124,162 @@
   }
 }
 
+.blog-one {
+
+  &__text {
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 30px;
+    margin-top: -1px;
+    margin-bottom: 25px;
+
+    h4 {
+      color: $title;
+      font-size: 22px;
+      @extend %roboto-500;
+      margin: 20px 0;
+    }
+
+    p {
+      margin: 25px 0;
+    }
+
+    blockquote {
+      background-color: $bg;
+      border-left: 3px solid $accent;
+      padding: 35px 40px 40px 35px;
+      font-size: 22px;
+      color: $title;
+      @extend %roboto-400;
+      margin: 25px 0;
+    }
+  }
+  &__left-img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__right-img {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__info-link {
+    padding-left: 28px;
+    margin-right: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url('../images/icons/calendar.svg');
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__info-link--comment::before {
+    background-image: url('../images/icons/comment.svg');
+    width: 16px;
+    height: 16px;
+    top: 1px;
+  }
+
+  &__info-link--author::before {
+    background-image: url('../images/icons/user-blog.svg');
+    width: 16px;
+    height: 16px;
+  }
+
+  &-form__title {
+    text-transform: uppercase;
+    margin: 35px 0 25px;
+    color: $title;
+    font-size: 24px;
+    @extend %roboto-700;
+  }
+
+  .comments-form {
+    border-bottom: none;
+  }
+
+  .comments-box {
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 20px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 35px;
+  }
+
+  &__tags,
+  &__share {
+    span {
+      text-transform: uppercase;
+      color: $title;
+      @extend %roboto-700;
+      margin-right: 5px;
+    }
+  }
+
+  &__share {
+    a {
+      margin-right: 12px;
+      vertical-align: middle;
+
+      &:hover {
+        path {
+          fill: $accent;
+        }
+      }
+
+      path {
+        fill: #727272;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__author {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+  }
+
+  &__author-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin-right: 30px;
+  }
+
+  &__author-name {
+    text-transform: uppercase;
+    font-size: 22px;
+    @extend %roboto-500;
+    color: $title;
+    margin-bottom: 20px;
+  }
+}
+
+.comments__title{
+  font-size: 24px;
+  @extend %roboto-700;
+  color: $title;
+  margin-bottom: 25px;
+}
 
 
 
