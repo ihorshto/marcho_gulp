@@ -1,0 +1,119 @@
+.footer {
+  background-color: $bg;
+}
+
+.footer-top {
+  padding: 70px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+
+  &__contact {
+    width: 250px;
+    margin-right: 50px;
+  }
+
+  &__nav {
+    width: 170px;
+    margin-right: 30px;
+  }
+
+  &__item-form {
+    max-width: 470px;
+  }
+
+  &__logo {
+    margin-bottom: 33px;
+  }
+
+  &__adress,
+  &__email,
+  &__phone {
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  &__social-list {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+  }
+
+  &__social-item+.footer-top__social-item {
+    padding-left: 18px;
+  }
+
+  &__social-link {
+    path {
+      transition: all .3s;
+      fill: $default;
+    }
+
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 37px;
+    font-size: 22px;
+    color: $title;
+    @extend %roboto-500;
+  }
+
+  &__link {
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+  }
+
+  &__form-input {
+    max-width: 320px;
+    background-color: #fff;
+    width: 100%;
+    border: none;
+    padding: 12px 10px 12px 15px;
+    margin-right: 10px;
+    box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+
+    &::placeholder {
+      color: $default;
+      font-size: 16px;
+      @extend %quicksand-500;
+    }
+  }
+
+  &__form-btn {
+    @extend %btn;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+
+  &__accept {
+    display: flex;
+  }
+
+  &__text {
+    padding-right: 20px;
+  }
+
+  &__accept-img {
+    padding-right: 25px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
