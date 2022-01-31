@@ -21,8 +21,8 @@ function browsersync() {
   browserSync.init({
     server: {
       baseDir: 'app/',
-      index: "product.html"
-    }
+    },
+    notify: false
   });
 }
 
@@ -32,7 +32,7 @@ function nunjucks() {
   .pipe(dest('app'))
   .pipe(browserSync.stream())
 }
-
+ 
 function cleanDist() {
   return del('dist')
 }
