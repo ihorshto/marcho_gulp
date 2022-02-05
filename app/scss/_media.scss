@@ -1,0 +1,169 @@
+@media (max-width: 1200px) {
+  .blog-page {
+
+    .filter__item.filter-search {
+      display: block;
+    }
+
+    .filter__item {
+      display: none;
+    }
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__aside {
+      order: -1;
+      width: 100%;
+    }
+
+    .filter-search {
+      &__input {
+        width: 100%;
+      }
+    }
+
+    &__content {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .person,
+  .latest-post {
+    display: none;
+  }
+
+  .blog-one {
+    &__left-img {
+      float: none;
+    }
+  }
+}
+
+
+@media (max-width: 620px) {
+  .blog-page {
+    padding: 60px 0;
+
+    &__item-box {
+      padding: 20px;
+    }
+
+    &__img {
+      max-height: 270px;
+    }
+
+    &__popup {
+      max-height: 270px;
+    }
+  }
+
+  .blog-one {
+    &__text {
+      padding: 20px;
+
+      blockquote {
+        padding: 20px 25px;
+      }
+    }
+
+    &__info {
+      display: block;
+    }
+
+    &__info-item {
+      margin-bottom: 10px;
+    }
+
+    &__box {
+      flex-wrap: wrap;
+    }
+
+    &__tags {
+      margin-bottom: 10px;
+    }
+
+    .comments-form {
+      padding-bottom: 0;
+    }
+  }
+
+  .comments-form {
+    &__box-input {
+      display: block;
+      margin-bottom: 0;
+    }
+
+    &__text-input {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .blog-one {
+    &__author-img {
+      display: none;
+    }
+
+    &__text {
+      padding: 10px;
+
+      blockquote {
+        padding: 10px 15px;
+      }
+    }
+  }
+
+  .comments__img {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .blog-page {
+
+    &__item-box {
+      padding: 10px 5px;
+    }
+
+    &__img {
+      max-height: 170px;
+    }
+
+    &__popup {
+      max-height: 170px;
+    }
+
+    &__icon {
+      max-width: 90px;
+    }
+
+    &__item {
+      margin-bottom: 40px;
+    }
+
+    &__item:last-child {
+      margin-bottom: 30px;
+    }
+
+    &__slider {
+      .slick-next {
+        right: 10px;
+      }
+
+      .slick-prev {
+        left: 10px;
+      }
+    }
+  }
+}
