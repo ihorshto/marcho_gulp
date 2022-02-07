@@ -47,17 +47,19 @@ a {
     width: 16px;
     height: 16px;
     left: 0;
-    top: 2px;
+    top: 4px;
   }
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
     color: #727272;
     padding-right: 40px;
     position: relative;
+    margin: 0 5px 5px 0;
 
     &::after {
       content: "";
@@ -66,7 +68,7 @@ a {
       width: 9px;
       height: 10px;
       right: 15px;
-      top: 8px;
+      top: 9px;
     }
 
     &:last-child {
@@ -97,10 +99,12 @@ a {
     display: flex;
     padding: 0 35px;
   }
-  &__item a{
+
+  &__item a {
     padding: 0 15px;
   }
-  &__link--active{
+
+  &__link--active {
     color: $accent;
   }
 
@@ -115,7 +119,7 @@ a {
       height: 10px;
     }
   }
- 
+
   &__prev {
     padding-left: 15px;
 
@@ -138,15 +142,15 @@ a {
 }
 
 @media (max-width: 620px) {
-  .title{
+  .title {
     font-size: 40px;
     line-height: 48px;
   }
 }
 
 @media (max-width: 375px) {
-.title{
-  font-size: 32px;
-  line-height: 40px;
-}
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }

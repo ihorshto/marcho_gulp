@@ -143,8 +143,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    transform: translateY(210%);
-
+    transform: translateY(310%);
   }
 
   &__link--line::before,
@@ -276,4 +275,4 @@
       width: 100%;
     }
   }
-}
+}    
